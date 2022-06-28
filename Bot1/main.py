@@ -56,10 +56,16 @@ def weather(message):
 def message_1(message):
     get_message_bot = message.text.strip().lower()
     if get_message_bot == 'курсы валют беларусь':
+        photo = open('money.bmp', 'rb')
+        bot.send_photo(message.chat.id, photo)
         bot.send_message(message.chat.id, 'Жми ещё!', exchange(message))
     elif get_message_bot == 'курс биткоина к доллару':
+        photo = open('bitcoin.bmp', 'rb')
+        bot.send_photo(message.chat.id, photo)
         bot.send_message(message.chat.id, 'Жми ещё!', bitcoin(message))
     elif get_message_bot == 'погода в минске':
+        photo = open('weather.bmp', 'rb')
+        bot.send_photo(message.chat.id, photo)
         bot.send_message(message.chat.id, 'Жми ещё!', weather(message))
     else:
         photo = open('да что ты.bmp', 'rb')
